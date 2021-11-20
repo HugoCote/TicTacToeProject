@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap');
+:root {
+    --banner-color: rgb(39, 128, 113);
+    --background-color: rgb(60, 179, 159);
+    --dim-dark-color: rgb(32, 30, 30);
+    --dim-light-color: rgb(105, 172, 162);
+    /* --dim-dark-color: rgb(36, 36, 36); */
+    --board-font-family: 'Permanent Marker', cursive;
+    --site-font-family: 'Lobster', cursive;
+    /* --site-font-family: 'Montserrat Alternates', sans-serif; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    background: var(--background-color);
+    font-family: var(--board-font-family);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.horizontal-block {
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    min-width: 600px;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+    padding: 24px;
+    height: 600px;
+    width: 600px;
+    border-radius: 24px;
+    border: 3px solid var(--dim-dark-color);
+    background-color: var(--banner-color);
+}
+
+.board .grid {
+    /* height: 550px; */
+    /* width: 550px; */
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    background-color: black;
+}
+
+.board .grid .board-tile {
+    height: 175px;
+    width: 175px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--banner-color);
+    color: black;
+    font-size: 128px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    overflow: hidden;
+}
+
+.board .grid .board-tile:hover {
+    transform: scale(1.02, 1.02);
+    background: var(--dim-light-color);
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background: var(--banner-color);
+    border-bottom: 2px solid var(--dim-dark-color);
+    border-top: 2px solid var(--dim-dark-color);
+}
+
+.top {
+    position: fixed;
+    top: 0;
+}
+
+.bot {
+    position: fixed;
+    bottom: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--dim-dark-color);
+}
+
+header .menu {
+    margin-bottom: 6px;
+}
+
+header .game-result {
+    font-size: 48px;
+    color: black;
+    /* color: var(--dim-light-color); */
+    font-family: var(--site-font-family);
+}
+
+header .button-refresh {
+    border: 2px solid var(--dim-dark-color);
+    border-radius: 8px;
+    color: var(--dim-dark-color);
+    background: var(--dim-light-color);
+    font-family: inherit;
+    font-weight: bolder;
+}
+
+header .button-refresh:hover {
+    background: rgb(0, 182, 0);
+    transform: translate(-1px, 1px);
+}
+
+header .title {
+    font-family: var(--site-font-family);
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+footer {
+    height: 64px;
+    color: var(--dim-dark-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+footer a {
+    text-decoration: inherit;
+    color: var(--dim-light-color);
+}
